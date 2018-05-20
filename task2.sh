@@ -33,4 +33,4 @@ docker tag samp_app_img dbarabash/samp_app_img
 docker push dbarabash/samp_app_img
 echo "Now you may check your pushed image on Docker hub"
 rm -rf ~/sample-application
-
+docker images | grep 'none' | awk ' {print $3} ' | xargs docker rmi -f &> /dev/null
